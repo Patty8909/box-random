@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random color and text</title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+</head>
+<body>
+  <div id="box">
+
+  </div>
+  
+  <script>
+    const div = React.DOM.div;
+    const h2 = React.DOM.h2;
+    const p = React.DOM.p;
+    
+    function Boxrandom() {
+      const colors = ['#760CE8', '#4782B1', '#E8890C'];
+      const phrases = ['Ciao mondo','Hallo welt','Hola mundo']
+      const mensaje = phrases[Math.floor(Math.random()*phrases.length)];
+          console.log(mensaje)
+      const bgColor = colors[Math.floor(Math.random()*colors.length)];
+          console.log(bgColor)
+      const containerStyle = {
+        backgroundColor: bgColor,
+        padding: 10
+      };
+    
+          return div({ style: containerStyle },
+            h2(null, "Saludo"),
+            p(null, mensaje)
+          );
+        }
+
+        ReactDOM.render(
+            Boxrandom(),
+            document.getElementById('box')
+        );
+    
+      </script>
+</body>
+</html>
